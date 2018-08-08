@@ -3,7 +3,9 @@ Interactive Elastic Analyzer
 ===================================
 
 
-ElasticSearch Interactive Analyzer  ⚡
+ElasticSearch Interactive Analyzer  ⚡🔍✨
+
+interactive-elastic.herokuapp.com
 
 -------------------------------------------------------------------------
 
@@ -34,6 +36,7 @@ Send me a message on `twitter`_
 Credits
 ------
 
-Inspired by `Elyzer <https://github.com/o19s/elyzer>`_.
-Uses `Bulma Template <https://github.com/dansup/bulma-templates>`_.
+* Inspired by `Elyzer <https://github.com/o19s/elyzer>`_.
+* `Bulma Template <https://github.com/dansup/bulma-templates>`_.
+* Uses `Searchbox Heroku Addon  <https://elements.heroku.com/addons/searchbox>`_.
 
