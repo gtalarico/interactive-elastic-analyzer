@@ -9,6 +9,10 @@ code {
   font-size: 0.8rem !important;
 }
 
+.tag, {
+  font-family: 'Roboto Mono', monospace !important;
+}
+
 pre,
 .message {
   max-width: 960px;

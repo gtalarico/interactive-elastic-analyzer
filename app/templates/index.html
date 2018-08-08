@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <title>Interactive Elastic Analyzer</title>
   <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon.png?v=1">
-  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet"> -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css'>
   <link rel='stylesheet prefetch' href='https://use.fontawesome.com/releases/v5.0.13/css/all.css'>
@@ -109,9 +109,14 @@
                 <hr>
 
                 <label class="label ">Tokens</label>
-                <pre class="is-small "><code class="language-javascript " v-html="reponseTokens "></code></pre>
-                <label class="label ">Response</label>
-                <pre class="is-small "><code class="language-javascript " v-html="response "></code></pre>
+                  <div class="tags">
+                    <span class="tag is-primary" v-for="t in reponseTokens">
+                      {{ t }}
+                    </span><br>
+                  </div>
+                <!-- <pre class="is-small "><code class="language-javascript " v-html="reponseTokens "></code></pre> -->
+                <label class="label">Response</label>
+                <pre class="is-small "><code style="font-family: 'Roboto Mono', monospace" class="language-javascript " v-html="response "></code></pre>
 
                 <article class="message is-primary ">
                   <span class="icon has-text-primary ">
@@ -136,7 +141,7 @@
         <div class="control">
           <div class="tags has-addons ">
             <a class="tag is-primary " href="https://github.com/gtalarico/interactive-elastic-analyzer">Interactiv Elastic Analyzer</a>
-            <span class="tag ">MIT license</span>
+            <span class="tag is-dark">MIT license</span>
           </div>
         </div>
       </div>
