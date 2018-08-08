@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <title>Interactive Elastic Analyzer</title>
   <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon.png?v=1">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css'>
   <link rel='stylesheet prefetch' href='https://use.fontawesome.com/releases/v5.0.13/css/all.css'>
@@ -100,15 +102,15 @@
                 <div class="field ">
                   <label class="label ">Text</label>
                   <div class="control ">
-                    <textarea class="textarea " placeholder="Textarea " @input="debouncedTextInput" v-model="rawTextInput"></textarea>
+                    <textarea class="textarea " height="100" placeholder="Textarea " @input="debouncedTextInput" v-model="rawTextInput"></textarea>
                   </div>
                 </div>
 
                 <hr>
 
-                <p>Response Tokens</p>
+                <label class="label ">Tokens</label>
                 <pre class="is-small "><code class="language-javascript " v-html="reponseTokens "></code></pre>
-                <p>Full Response</p>
+                <label class="label ">Response</label>
                 <pre class="is-small "><code class="language-javascript " v-html="response "></code></pre>
 
                 <article class="message is-primary ">
@@ -116,7 +118,8 @@
                     <i class="fab fa-js "></i>
                   </span>
                   <div class="message-body ">
-                    For more information on see the official
+                    This project is not associated with Elasticsearch.
+                    <br>For more information on see the official
                     <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-analyze.html ">Documentation</a>
                   </div>
                 </article>
@@ -127,19 +130,19 @@
         </div>
       </div>
     </section>
-    <footer class="footer ">
-      <div class="columns is-mobile is-centered ">
-        <div class="field is-grouped is-grouped-multiline ">
-          <div class="control ">
-            <div class="tags has-addons ">
-              <a class="tag is-primary " href="https://github.com/gtalarico/interactive-elastic-analyzer">Interactiv Elastic Analyzer</a>
-              <span class="tag ">MIT license</span>
-            </div>
+    <!-- <footer class="footer"> -->
+    <div class="columns is-mobile is-centered license">
+      <div class="field is-grouped is-grouped-multiline ">
+        <div class="control">
+          <div class="tags has-addons ">
+            <a class="tag is-primary " href="https://github.com/gtalarico/interactive-elastic-analyzer">Interactiv Elastic Analyzer</a>
+            <span class="tag ">MIT license</span>
           </div>
         </div>
       </div>
+    </div>
 
-    </footer>
+    <!-- </footer> -->
   </secion>
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.js'></script>

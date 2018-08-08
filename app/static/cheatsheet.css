@@ -1,5 +1,7 @@
 body,
 html {
+  /* font-family: "Roboto", sans-serif; */
+  font-family: "Open Sans", sans-serif;
   background: #f2f2f2;
 }
 
@@ -56,6 +58,19 @@ li {
   background: inherit;
   margin: inherit;
 }
-.footer {
-  background-color: white;
+.license {
+  padding-bottom: 2rem;
+}
+
+.label {
+  color: #666666;
+  font-weight: 500;
+}
+
+.card {
+  background-color: #f9f9f9;
+}
+
+.card-content {
+  padding-top: 0.75rem;
 }
