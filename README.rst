@@ -27,13 +27,13 @@ Screenshots
 Running Locally
 ----------------
 
-```
-git clone git@github.com:gtalarico/interactive-elastic-analyzer.git
-cd interactive-elastic-analyzer
-pipenv install --dev
-# or virtualenv + pip install -r requirements
-python run.py
-```
+.. code:: console
+
+    $ git clone git@github.com:gtalarico/interactive-elastic-analyzer.git
+    $ cd interactive-elastic-analyzer
+    $ pipenv install --dev
+    $ # or virtualenv + pip install -r requirements
+    $ python run.py
 
 
 Todo
