@@ -12,16 +12,16 @@ Overview
 --------
 
 Explore Elasticsearch Tokenizer and Token Filters interactively.
+Contributions are welcome.
 
 .. image:: https://raw.githubusercontent.com/gtalarico/interactive-elastic-analyzer/master/app/static/screenshot.png
 
-Contributions are welcome.
 
 Todo
 -------
 
 * Token Filter Options
-* Documentation
+* Add Documentation
 * Contributing Guidelines
 
 Author
