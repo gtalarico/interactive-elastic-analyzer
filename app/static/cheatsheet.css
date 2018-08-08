@@ -16,6 +16,7 @@ code {
 pre,
 .message {
   max-width: 960px;
+  font-size: .8rem
 }
 
 li {

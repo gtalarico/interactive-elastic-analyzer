@@ -19,6 +19,15 @@ Contributions are welcome.
 .. image:: https://raw.githubusercontent.com/gtalarico/interactive-elastic-analyzer/master/app/static/screenshot.png
 
 
+Running Locally
+----------------
+
+```
+git clone git@github.com:gtalarico/interactive-elastic-analyzer.git
+cd interactive-elastic-analyzer
+pipenv install --dev
+
+
 Todo
 -------
 
