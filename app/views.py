@@ -37,7 +37,7 @@ def elastic():
 # Configure Session
 # You can set `SEARCHBOX_URL` to your own elastic instance or use the free tier
 DEFAULT_SEARCHBOX_URL = \
-  'http://paas:fa037e1c0782e410fa17ca277ec47225@thorin-us-east-1.searchly.com'
+  'http://paas:fa037e1c0782e410fa17ca277ec47225@thorin-us-east-1.searchly.com:80'
 URL = os.getenv('SEARCHBOX_URL', DEFAULT_SEARCHBOX_URL)
 INDEX_NAME = "interactive-index"
 es = Elasticsearch(URL)
