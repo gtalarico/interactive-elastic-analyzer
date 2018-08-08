@@ -9,6 +9,6 @@ itsdangerous==0.24
 jinja2==2.10
 markupsafe==1.0
 python-dotenv==0.9.1
-requests==2.19.1
 urllib3==1.23
+elasticsearch==6.3.0
 werkzeug==0.14.1

@@ -7,7 +7,7 @@ name = "pypi"
 flask = "*"
 gunicorn = "*"
 python-dotenv = "*"
-requests = "*"
+elasticsearch = "*"
 
 [dev-packages]
 mypy = "*"
