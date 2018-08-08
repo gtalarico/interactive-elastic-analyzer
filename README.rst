@@ -26,14 +26,18 @@ Running Locally
 git clone git@github.com:gtalarico/interactive-elastic-analyzer.git
 cd interactive-elastic-analyzer
 pipenv install --dev
+# or virtualenv + pip install -r requirements
+python run.py
+```
 
 
 Todo
 -------
 
-* Token Filter Options
-* Add Documentation
-* Contributing Guidelines
+* Implement all Token Filters
+* Implement Token Filter Options
+* Implement Token Filter Order
+
 
 Author
 ------

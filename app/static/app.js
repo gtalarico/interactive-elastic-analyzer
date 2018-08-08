@@ -4,8 +4,8 @@ const app = new Vue({
     response: null,
     tokenizer: "standard",
     tokenFilter: [],
-    rawTextInput: "Some Foxes are quick-foxes, others are_not",
-    textInput: "Some Foxes are quick-foxes, others are_not",
+    rawTextInput: "SomeFoxes are quick-foxes, others are_not",
+    textInput: "SomeFoxes are quick-foxes, others are_not",
     tokenizerConfig: {},
     tokenizers: [
       {

@@ -1,0 +1,14 @@
+-i https://pypi.org/simple
+certifi==2018.4.16
+chardet==3.0.4
+click==6.7
+flask==1.0.2
+gunicorn==19.9.0
+idna==2.7
+itsdangerous==0.24
+jinja2==2.10
+markupsafe==1.0
+python-dotenv==0.9.1
+requests==2.19.1
+urllib3==1.23
+werkzeug==0.14.1
