@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Elastic Analyzer</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Interactive Elasticsearch Analyzer">
+    <meta name="keywords" content="Elasticsearch, Analyzer, Tokenizer, Token Filter, Interactive">
+    <meta name="author" content="Gui Talarico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css'>
+    <link rel='stylesheet prefetch' href='https://use.fontawesome.com/releases/v5.0.13/css/all.css'>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/themes/prism.min.css'>
+    <link rel="stylesheet" href="/static/cheatsheet.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js" integrity="sha256-FtWfRI+thWlNz2sB3SJbwKx5PgMyKIVgwHCTwa3biXc="
+        crossorigin="anonymous"></script>
+</head>
+
+<body id="app">
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="columns">
+                <div class="column is-12">
+                    <div class="container content">
+                        <i class="is-small fas fa-code"></i>
+                        <h1 class="title">Interactive Elastic Analyzer</h1>
+                        <h3 class="subtitle">
+                            Interactive Analyzer, Tokenizer, and Token Filter Testing
+                        </h3>
+                        <a href="https://github.com/#" target="_blank" class="button is-small">
+                            <span class="icon">
+                                <i class="fab fa-github"></i>
+                            </span>
+                            <span>Github</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <!-- <div class="column is-3">
+            <aside class="is-medium menu">
+          <p class="menu-label">
+            categories
+          </p>
+          <ul class="menu-list">
+            <li class="is-right"><a href="#const" class="is-active"><i class="fab fa-css3-alt"></i> CSS</a></li>
+            <li><a href="#let" class="is-active"><i class="fab fa-js"></i> JS</a></li>
+          </ul>
+              <p class="menu-label">
+                More to come...
+              </p>
+              <ul class="menu-list">
+                <li><span class="tag is-white is-medium">Lorem</span></li>
+              </ul>
+            </aside>
+          </div> -->
+                <div class="column is-9">
+                    <div class="content is-medium">
+                        <h3 class="title is-3">Snippets ¯\_(ツ)_/¯</h3>
+                        <div class="box">
+                            <h4 id="const" class="title is-3">Standard</h4>
+                            <article class="message is-primary">
+                                <span class="icon has-text-primary">
+                                    <i class="fab fa-js"></i>
+                                </span>
+                                <div class="message-body">
+                                    Block-scoped. Cannot be re-assigned. Not immutable.
+                                </div>
+                            </article>
+                            <pre><code class="language-javascript">const test = 'test';</code></pre>
+                        </div>
+                        <div class="box">
+                            <h4 id="let" class="title is-3">let</h4>
+                            <article class="message is-primary">
+                                <span class="icon has-text-primary">
+                                    <i class="fas fa-info-circle"></i>
+                                </span>
+                                <div class="message-body">
+                                    Block-scoped. Can be re-assigned.
+                                </div>
+                            </article>
+                            <pre><code class="language-javascript">let i = 0;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <section class="section">
+            <div class="container">
+                <div class="columns is-multiline">
+                    <div class="column is-one-third">
+                        <article class="notification media has-background-white">
+                            <figure class="media-left">
+                                <span class="icon">
+                                    <i class="has-text-warning fas fa-columns fa-lg"></i>
+                                </span>
+                            </figure>
+                            <div class="media-content">
+                                <div class="content">
+                                    <h1 class="title is-size-4">Analyzer</h1>
+                                    <p class="is-size-5 subtitle">
+                                        Link
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="column is-one-third">
+                        <article class="notification has-background-white media">
+                            <figure class="media-left">
+                                <span class="icon has-text-info">
+                                    <i class="fab fa-lg fa-wpforms"></i>
+                                </span>
+                            </figure>
+                            <div class="media-content">
+                                <div class="content">
+                                    <h1 class="title is-size-4">Tokenizer</h1>
+                                    <p class="is-size-5 subtitle">
+                                        Link
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="column is-one-third">
+                        <article class="notification has-background-white media">
+                            <figure class="media-left">
+                                <span class="icon has-text-danger">
+                                    <i class="fas fa-lg fa-cubes"></i>
+                                </span>
+                            </figure>
+                            <div class="media-content">
+                                <div class="content">
+                                    <h1 class="title is-size-4">Tokenizer</h1>
+                                    <p class="is-size-5 subtitle">
+                                        Link
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <div class="columns is-mobile is-centered">
+            <div class="field is-grouped is-grouped-multiline">
+                <div class="control">
+                    <div class="tags has-addons">
+                        <a class="tag is-link" href="https://github.com/dansup/bulma-templates">Interactiv Elastic Analyzer</a>
+                        <span class="tag is-info">MIT license</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.js'></script>
+    <script src='/static/app.js'></script>
+
+</body>
+
+</html>

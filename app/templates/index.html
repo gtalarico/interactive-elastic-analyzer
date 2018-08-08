@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Elastic Analyzer</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon.png?v=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css'>
+  <link rel='stylesheet prefetch' href='https://use.fontawesome.com/releases/v5.0.13/css/all.css'>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/themes/prism.min.css'>
+  <link rel="stylesheet" href="/static/cheatsheet.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js" integrity="sha256-FtWfRI+thWlNz2sB3SJbwKx5PgMyKIVgwHCTwa3biXc="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.js" integrity="sha256-qwbDmNVLiCqkqRBpF46q5bjYH11j5cd+K+Y6D3/ja28="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <secion id="app">
+    <section class="hero is-primary">
+      <div class="hero-body">
+        <div class="columns">
+          <div class="column is-12">
+            <div class="container content">
+              <!-- <i class=" fas fa-search"></i> -->
+              <h1 class="title">Interactive Elasticsearch Analyzer</h1>
+              <h3 class="subtitle is-size-6">
+                <a href="https://github.com/gtalarico/interactive-elastic-analyzer" target="_blank" class="button" style="float:right">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Github</span>
+                </a>
+                Analyzer, Tokenizer, and Token Filter Testing
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="columns is-centered">
+
+          <div class="column is-9">
+            <div class="content is-medium">
+              <!-- <h3 class="title is-3">¯\_(ツ)_/¯</h3> -->
+              <div class="box">
+
+                <div class="columns is-variable is-6">
+                  <div class="column is-half">
+                    <div class="field">
+                      <label class="label">Tokenizer</label>
+                      <div class="control">
+                        <div class="select is-small is-fullwidth">
+                          <select v-model="tokenizer" @change="doFetch">
+                            <option v-for="t in tokenizers" :key="t.name">{{t.name}}</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <section v-if="tokenOptions.length">
+                      <label class="label">Tokenizer Options</label>
+                      <div class="card">
+                        <div class="card-content">
+
+                          <p class="help is-danger" v-if="response && response.error">{{response.error.reason}}</p>
+                          <div class="field" v-for="opt in tokenOptions">
+                            <label class="label">{{opt.name}}</label>
+                            <div class="control">
+                              <input class="input is-small" :placeholder="opt.default" v-model="tokenizerConfig[opt.name] " @input="doFetch "></input>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+
+                  <div class="column is-half ">
+                    <div class="field ">
+                      <label class="label ">Token Filters</label>
+                      <div class="control ">
+                        <div class="select is-small is-fullwidth is-multiple ">
+                          <select multiple size="6 " v-model="tokenFilter " @change="doFetch ">
+                            <option v-for="f in tokenFilters " :key="f ">{{f}}</option>
+                          </select>
+                        </div>
+                      </div>
+                      <p class="text-is-grey help ">User ctrl to select multiple filters</p>
+                    </div>
+                  </div>
+                </div>
+
+                <hr>
+
+                <div class="field ">
+                  <label class="label ">Text</label>
+                  <div class="control ">
+                    <textarea class="textarea " placeholder="Textarea " @input="debouncedTextInput" v-model="rawTextInput"></textarea>
+                  </div>
+                </div>
+
+                <hr>
+
+                <p>Response Tokens</p>
+                <pre class="is-small "><code class="language-javascript " v-html="reponseTokens "></code></pre>
+                <p>Full Response</p>
+                <pre class="is-small "><code class="language-javascript " v-html="response "></code></pre>
+
+                <article class="message is-primary ">
+                  <span class="icon has-text-primary ">
+                    <i class="fab fa-js "></i>
+                  </span>
+                  <div class="message-body ">
+                    For more information on see the official
+                    <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-analyze.html ">Documentation</a>
+                  </div>
+                </article>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer ">
+      <div class="columns is-mobile is-centered ">
+        <div class="field is-grouped is-grouped-multiline ">
+          <div class="control ">
+            <div class="tags has-addons ">
+              <a class="tag is-primary " href="https://github.com/dansup/bulma-templates">Interactiv Elastic Analyzer</a>
+              <span class="tag ">MIT license</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+  </secion>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.js'></script>
+  <script src='/static/server.js'></script>
+  <script src='/static/app.js'></script>
+
+</body>
+
+</html>
