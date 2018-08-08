@@ -5,7 +5,7 @@ Interactive Elastic Analyzer
 
 ElasticSearch Interactive Analyzer  ⚡🔍✨
 
-interactive-elastic.herokuapp.com
+https://interactive-elastic.herokuapp.com
 
 -------------------------------------------------------------------------
 
