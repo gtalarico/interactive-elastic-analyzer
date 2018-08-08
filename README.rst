@@ -16,8 +16,13 @@ Overview
 Explore Elasticsearch Tokenizer and Token Filters interactively.
 Contributions are welcome.
 
+===========
+Screenshots
+===========
+
 .. image:: https://raw.githubusercontent.com/gtalarico/interactive-elastic-analyzer/master/app/static/screenshot.png
 
+.. image:: https://raw.githubusercontent.com/gtalarico/interactive-elastic-analyzer/master/app/static/screenshot2.png
 
 Running Locally
 ----------------
