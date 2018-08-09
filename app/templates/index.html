@@ -2,6 +2,14 @@
 <html lang="en">
 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-3836052-13"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-3836052-13');
+  </script>
   <meta charset="UTF-8">
   <title>Interactive Elastic Analyzer</title>
   <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon.png?v=1">
@@ -21,7 +29,7 @@
 </head>
 
 <body>
-  <secion id="app">
+  <section id="app">
     <section class="hero is-primary">
       <div class="hero-body">
         <div class="columns">
@@ -153,7 +161,7 @@
     </div>
 
     <!-- </footer> -->
-  </secion>
+  </section>
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.js'></script>
   <script src='/static/server.js'></script>
