@@ -1,8 +1,7 @@
 import os
 
-from urllib.parse import urlparse, urljoin
 from flask import jsonify, send_file, request
-import requests
+from elasticsearch import Elasticsearch
 
 from . import app
 
@@ -17,8 +16,9 @@ def robots():
     return send_file("robots.txt")
 
 
-@app.route("/elastic/", methods=["POST"])
+@app.route("/elastic", methods=["POST"])
 def elastic():
+    """ Elastic Search Analyze Endpoint """
     data = request.json
     text = data.get("text", "")
     tokenizer = data.get("tokenizer", "standard")
@@ -28,22 +28,23 @@ def elastic():
         "text": text,
         "tokenizer": dict(type=tokenizer, **tokenizer_config),
         "filter": filters,
-        # "char_filter": ["html_strip"],
+        # "char_filter": ["html_strip"], TODO
     }
-    resp = session.post(ANALYZER_URL, json=body)
-    return jsonify(resp.json())
+    resp = es.indices.analyze(index=INDEX_NAME, body=body)
+    return jsonify(resp)
 
 
-URL = os.environ["SEARCHBOX_URL"]
+# Configure Session
+# You can set `SEARCHBOX_URL` to your own elastic instance or use the free tier
+DEFAULT_SEARCHBOX_URL = \
+  'http://paas:fa037e1c0782e410fa17ca277ec47225@thorin-us-east-1.searchly.com:80'
+URL = os.getenv('SEARCHBOX_URL', DEFAULT_SEARCHBOX_URL)
 INDEX_NAME = "interactive-index"
-INDEX_URL = f"{URL}/{INDEX_NAME}"
-ANALYZER_URL = f"{INDEX_URL}/_analyze"
-session = requests.Session()
-session.headers = {"Content-Type": "application/json"}
+es = Elasticsearch(URL)
 
 # Ensure Index Exists
 payload = {
     "settings": {"index": {"number_of_shards": 1, "number_of_replicas": 1}}
 }
-
-session.put(INDEX_URL, json=dict(body=payload))
+# create the index, ignore 400 if index already exists
+es.indices.create(index=INDEX_NAME, body=payload, ignore=400)

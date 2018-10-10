@@ -5,7 +5,7 @@ Interactive Elastic Analyzer
 
 ElasticSearch Interactive Analyzer  ⚡🔍✨
 
-interactive-elastic.herokuapp.com
+https://interactive-elastic.herokuapp.com
 
 -------------------------------------------------------------------------
 
@@ -16,15 +16,33 @@ Overview
 Explore Elasticsearch Tokenizer and Token Filters interactively.
 Contributions are welcome.
 
+===========
+Screenshots
+===========
+
 .. image:: https://raw.githubusercontent.com/gtalarico/interactive-elastic-analyzer/master/app/static/screenshot.png
+
+.. image:: https://raw.githubusercontent.com/gtalarico/interactive-elastic-analyzer/master/app/static/screenshot2.png
+
+Running Locally
+----------------
+
+.. code:: console
+
+    $ git clone git@github.com:gtalarico/interactive-elastic-analyzer.git
+    $ cd interactive-elastic-analyzer
+    $ pipenv install --dev
+    $ # or virtualenv + pip install -r requirements
+    $ python run.py
 
 
 Todo
 -------
 
-* Token Filter Options
-* Add Documentation
-* Contributing Guidelines
+* Implement all Token Filters
+* Implement Token Filter Options
+* Implement Token Filter Order
+
 
 Author
 ------

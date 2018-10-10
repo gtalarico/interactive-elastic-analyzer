@@ -1,16 +1,5 @@
 const $axios = axios.create({
-  baseURL: "/elastic/",
-  timeout: 5000,
+  baseURL: "/elastic",
+  timeout: 80000,
   headers: { "Content-Type": "application/json" }
 });
-
-// $axios.interceptors.response.use(
-//   function(response) {
-//     return response;
-//   },
-//   function(error) {
-//     // Handle Error
-//     console.log(error);
-//     return Promise.reject(error);
-//   }
-// );

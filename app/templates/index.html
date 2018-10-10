@@ -2,11 +2,19 @@
 <html lang="en">
 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-3836052-13"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-3836052-13');
+  </script>
   <meta charset="UTF-8">
   <title>Interactive Elastic Analyzer</title>
   <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon.png?v=1">
-  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet"> -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css'>
   <link rel='stylesheet prefetch' href='https://use.fontawesome.com/releases/v5.0.13/css/all.css'>
@@ -21,7 +29,7 @@
 </head>
 
 <body>
-  <secion id="app">
+  <section id="app">
     <section class="hero is-primary">
       <div class="hero-body">
         <div class="columns">
@@ -92,7 +100,7 @@
                           </select>
                         </div>
                       </div>
-                      <p class="text-is-grey help ">User ctrl to select multiple filters</p>
+                      <p class="text-is-grey help ">Use <em>ctrl</em> or <em>command</em> to select multiple filters</p>
                     </div>
                   </div>
                 </div>
@@ -109,23 +117,33 @@
                 <hr>
 
                 <label class="label ">Tokens</label>
-                <pre class="is-small "><code class="language-javascript " v-html="reponseTokens "></code></pre>
-                <label class="label ">Response</label>
-                <pre class="is-small "><code class="language-javascript " v-html="response "></code></pre>
-
-                <article class="message is-primary ">
-                  <span class="icon has-text-primary ">
-                    <i class="fab fa-js "></i>
-                  </span>
-                  <div class="message-body ">
-                    This project is not associated with Elasticsearch.
-                    <br>For more information on see the official
-                    <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-analyze.html ">Documentation</a>
+                  <div class="tags">
+                    <span class="tag is-primary" v-for="t in reponseTokens">
+                      {{ t }}
+                    </span><br>
                   </div>
-                </article>
+                <!-- <pre class="is-small "><code class="language-javascript " v-html="reponseTokens "></code></pre> -->
+                <label class="label">Response</label>
+                <pre class="is-small "><code style="font-family: 'Roboto Mono', monospace" class="language-javascript " v-html="response "></code></pre>
 
               </div>
             </div>
+          </div>
+          <div class="column is-3">
+            <article class="message is-warning ">
+              <div class="message-body is-small">
+                Not all Token Filters are available.
+                Token Filter Options and Customer Orders are not supported yet.
+                Contributions to extend functionality are welcome.
+              </div>
+            </article>
+            <article class="message is-primary ">
+              <div class="message-body is-small">
+                This project is not associated with Elasticsearch.
+                <br>For more information on see the official
+                <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-analyze.html ">Documentation</a>
+              </div>
+            </article>
           </div>
         </div>
       </div>
@@ -136,14 +154,14 @@
         <div class="control">
           <div class="tags has-addons ">
             <a class="tag is-primary " href="https://github.com/gtalarico/interactive-elastic-analyzer">Interactiv Elastic Analyzer</a>
-            <span class="tag ">MIT license</span>
+            <span class="tag is-dark">MIT license</span>
           </div>
         </div>
       </div>
     </div>
 
     <!-- </footer> -->
-  </secion>
+  </section>
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.js'></script>
   <script src='/static/server.js'></script>
