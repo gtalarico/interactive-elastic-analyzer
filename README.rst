@@ -1,7 +1,7 @@
 ===================================
 Interactive Elastic Analyzer
 ===================================
-
+ 
 
 ElasticSearch Interactive Analyzer  ⚡🔍✨
 
